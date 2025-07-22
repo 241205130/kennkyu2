@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>名城大学食堂</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="gakusyoku.css">
+</head>
+<body class="bg-[#fff]">
+
+  <!-- ヘッダー（ハンバーガーメニュー） -->
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__logo"><a href="index.html" onclick="sessionStorage.setItem('seenAnimation', 'true')">MJ</a></h1>
+      <input type="checkbox" id="check">
+      <label for="check" class="hamburger">
+        <span></span>
+      </label>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html">ホーム</a></li>
+          <li class="nav__item"><a href="gakusyoku.html">学食</a></li>
+          <li class="nav__item"><a href="gaisyoku.html">外食</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container mx-auto p-6 space-y-8">
+
+<div class="card" id="cafeteriaTemplate">
+  <div class="flex flex-col md:flex-row bg-[#fff] rounded-xl shadow p-6 items-center justify-between">
+    <div class="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-4">
+      <img src="" alt="写真" class="rounded image-placeholder hidden">
+      <table class="table-auto w-full text-sm border mb-2">
+        <tr>
+          <td class="border px-2 py-1 font-semibold bg-gray-100">営業時間</td>
+          <td class="border px-2 py-1 open-hours"></td>
+        </tr>
+        <tr>
+          <td class="border px-2 py-1 font-semibold bg-gray-100">場所</td>
+          <td class="border px-2 py-1 location"></td>
+        </tr>
+      </table>
+      <div class="w-full space-y-2">
+        <h3 class="text-base font-semibold">主なメニュー</h3>
+        <ul class="list-disc list-inside text-gray-700 menu-list"></ul>
+        <p class="text-sm text-gray-600 comment"></p>
+        <a href="#" class="detail-link text-blue-600 hover:underline text-sm" target="_blank">座席予約へ</a>
+      </div>
+      <div class="w-full">
+        <canvas class="cafeteria-chart"></canvas>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 text-center md:text-right mt-6 md:mt-0 md:pl-24">
+      <img class="cafeteria-title-image mt-6" src="" alt="店名画像">
+      <img class="cafeteria-subimage mt-20 inline-block" src="" alt="補足画像">
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <script src="gakusyoku.js"></script>
+</body>
+</html>

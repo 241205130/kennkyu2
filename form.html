@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>席予約フォーム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="form.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- ヘッダー（ハンバーガーメニュー） -->
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__logo"><a href="index.html" onclick="sessionStorage.setItem('seenAnimation', 'true')">MJ</a></h1>
+      <input type="checkbox" id="check">
+      <label for="check" class="hamburger">
+        <span></span>
+      </label>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html">ホーム</a></li>
+          <li class="nav__item"><a href="gakusyoku.html">学食</a></li>
+          <li class="nav__item"><a href="gaisyoku.html">外食</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+   <div class="container">
+    <h1>座席予約フォーム</h1>
+    <form id="reservationForm">
+      <label for="name">お名前：</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="date">予約日：</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">時間帯：</label>
+      <select id="time" name="time" required>
+        <option value="">選択してください</option>
+        <option value="10:00〜11:00">10:00〜11:00</option>
+        <option value="11:00〜12:00">11:00〜12:00</option>
+        <option value="12:00〜13:00">12:00〜13:00</option>
+        <option value="13:00〜14:00">13:00〜14:00</option>
+      </select>
+
+      <label for="seats">人数：</label>
+      <input type="number" id="seats" name="seats" min="1" max="10" required>
+
+      <button type="submit">予約する</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('reservationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = 'thanks.html';
+    });
+  </script>  
+
+  </body>
+</html>
